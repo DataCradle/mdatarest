@@ -2,6 +2,7 @@ package com.mlink.mdatarest.restcontroller;
 
 import com.mlink.mdatarest.service.ClinicsService;
 import com.mlink.mdatarest.data.Clinic;
+import lombok.RequiredArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,12 +15,11 @@ import java.util.List;
 /**
  * @author David Yanovsky
  */
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/clinics")
 public class ClinicsRestController {
-
-    @Autowired
-    private ClinicsService clinicsService;
+    private final ClinicsService clinicsService;
 
     @GetMapping
     public List<Clinic> getAllClinics() {
