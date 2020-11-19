@@ -21,10 +21,16 @@ public class ClinicsRestController {
     @Autowired
     private ClinicsService clinicsService;
 
-    @GetMapping(value = "/")
+    @GetMapping
     public List<Clinic> getAllClinics() {
         return clinicsService.findAll();
     }
+
+    @GetMapping("/{id}")
+    public Clinic getClinic(@PathVariable("id") String id) {
+        return clinicsService.findById(id);
+    }
+
     @GetMapping(value = "/count")
     public long count() {
         return clinicsService.count();

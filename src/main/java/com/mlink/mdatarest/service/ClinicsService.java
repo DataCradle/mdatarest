@@ -12,7 +12,7 @@ import java.util.List;
 public interface ClinicsService {
     List<Clinic> findAll();
     //List<Clinic> find
-    //Clinic findById(String id);
+    Clinic findById(String id);
     Clinic findByName(String name);
     Clinic findByCity(String city);
     Clinic saveOrUpdateClinic(Clinic Clinic);
