@@ -1,12 +1,10 @@
-package com.mlink.mdatarest.service;
+package com.mlink.mdatarest.service.clinic;
 
 import com.mlink.mdatarest.data.Clinic;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ClinicsServiceImpl implements ClinicsService {
@@ -33,17 +31,23 @@ public class ClinicsServiceImpl implements ClinicsService {
     }
 
     @Override
+    public List<Clinic> findClinicsByNameContaining (String name) {
+        return clinicRepository.findClinicsByNameContaining(name);
+    }
+
+    @Override
+    public List<Clinic> findClinicsByNameContains(String name) {
+        return clinicRepository.findClinicsByNameContains(name);
+    }
+
+    @Override
     public Clinic saveOrUpdateClinic(Clinic Clinic) {
         return clinicRepository.save(Clinic);
     }
 
     @Override
-    public void deleteStudentById(String id) {
+    public void deleteClinicById(String id) {
         clinicRepository.deleteById(id);
     }
 
-    @Override
-    public long count() {
-        return clinicRepository.countClinicsByCityExists();
-    }
 }

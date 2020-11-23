@@ -1,8 +1,6 @@
-package com.mlink.mdatarest.service;
+package com.mlink.mdatarest.service.clinic;
 
 import com.mlink.mdatarest.data.Clinic;
-import org.bson.types.ObjectId;
-
 import java.util.List;
 
 /**
@@ -11,11 +9,11 @@ import java.util.List;
 
 public interface ClinicsService {
     List<Clinic> findAll();
-    //List<Clinic> find
     Clinic findById(String id);
     Clinic findByName(String name);
+    List<Clinic> findClinicsByNameContaining(String name);
+    List<Clinic> findClinicsByNameContains(String sname);
     Clinic findByCity(String city);
     Clinic saveOrUpdateClinic(Clinic Clinic);
-    void deleteStudentById(String id);
-    long count();
+    void deleteClinicById(String id);
 }

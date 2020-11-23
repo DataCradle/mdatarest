@@ -27,10 +27,4 @@ public class Clinic {
     private String phone;
     private String email;
     private String website;
-
-    @Override
-    public String toString() {
-        return "Clinic [id=" + id + ", name=" + name + ", information=" + information + "]";
-    }
-
 }
